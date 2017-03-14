@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace StringKata2 {
@@ -17,10 +17,14 @@ namespace StringKata2 {
         }
 
         private string[] getDelimiters(string input) {
-            return Regex.Matches(input, delimiterPattern).OfType<Match>()
-                .Select(match => match.Value)
+            return deriveCustomDelimiters(input)
                 .Union(delimiters)
                 .ToArray();
+        }
+
+        private IEnumerable<string> deriveCustomDelimiters(string input) {
+            return Regex.Matches(input, delimiterPattern).OfType<Match>()
+                .Select(match => match.Value);
         }
     }
 }
