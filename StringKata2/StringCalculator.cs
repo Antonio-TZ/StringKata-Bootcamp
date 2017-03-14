@@ -9,7 +9,6 @@ namespace StringKata2 {
         private const string delimiterPattern = @"(?<=\[)[^\]]*(?=\])|(?<=//).(?=\n)";
 
         internal int add(string input) {
-            List<string> numbers = input.Split(getDelimiters(input), StringSplitOptions.None).ToList();
             return input.Split(getDelimiters(input), StringSplitOptions.None)
                 .Select(number => number.asInt())
                 .ThrowExceptionForNegatives()
