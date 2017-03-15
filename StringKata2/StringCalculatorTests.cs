@@ -34,7 +34,7 @@ namespace StringKata2 {
         [TestCase("1,2,3", ExpectedResult = 6)]
         [TestCase("1,2,3,4", ExpectedResult = 10)]
         [TestCase("1,2,3,4,5", ExpectedResult = 15)]
-        public int return_sume_of_multiple_numbers(string numbers) {
+        public int return_sum_of_multiple_numbers(string numbers) {
             return calculator.add(numbers);
         }
 
